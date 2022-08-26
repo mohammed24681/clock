@@ -1,0 +1,120 @@
+body {
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  text-align: center;
+}
+
+.container .digital-clock {
+  font-weight: bold;
+  font-size: 30px;
+  letter-spacing: 3px;
+  color: #2f2f2f
+}
+
+.digital-clock .status {
+  color: #e7004e;
+}
+
+.container .wall-clock {
+  background-color: #e91e63;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  position: relative;
+  border: solid 4px #e91e63;
+  box-shadow: inset 0px 0px 15px 0px;
+}
+
+.container .wall-clock .numbers span {
+  display: block;
+}
+
+.container .wall-clock .numbers > span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  font-size: 23px;
+  text-align: center;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.container .wall-clock .hands {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .wall-clock .hands::before {
+  content: "";
+  background-color: #e91e63;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 2px solid black;
+  z-index: 5;
+}
+
+.container .wall-clock .hands > div {
+  transform-origin: bottom center;
+  transform: translateY(-50%);
+  position: absolute;
+  box-shadow: 0 0 10px #00000033;
+}
+
+.container .wall-clock .hands .seconds-hand {
+  width: 3px;
+  height: 75px;
+  background-color: red;
+}
+
+.container .wall-clock .hands .minutes-hand,
+.container .wall-clock .hands .hours-hand {
+  background-color: black;
+  width: 5px;
+  border-radius: 15px;
+}
+
+.container .wall-clock .hands .minutes-hand {
+  height: 70px;
+}
+
+.container .wall-clock .hands .hours-hand {
+  height: 53px;
+}
+
+.container .change {
+  background-color: #e7004e;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: capitalize;
+  padding: 10px 20px;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
